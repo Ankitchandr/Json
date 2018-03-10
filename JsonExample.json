@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <p>How to access nested JSON objects.</p>
+    <p>Access a JSON object using dot notation:</p>
+    <h1>Employee Name</h1>
+   
+    <p id="demo"></p> <br>
+    
+
+   
+
+    <p id="demo"></p>
+
+    <script>
+        var myObj, i, x = "", x1 = "";
+        myObj = {
+            "name": "John",
+            "age": 30,
+            "enployees":["Ankit","Ram","Sultana","kavita","Netish"],
+            "cars": {"car1":"Ford", "car2":"BMW","car3": "Fiat"}
+        };
+     
+       
+        //printing name of employee through json Array data
+        for (i = 0; i < myObj.enployees.length; i++) {
+            x += myObj.enployees[i] + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = x + "<br>";
+
+
+
+        document.getElementById("demo").innerHTML += "<br>" + "<h1>printing name of car through json object  data.<h2>";
+        //printing name of car through json object  data
+        for (x1 in myObj.cars) {
+           document.getElementById("demo").innerHTML += x1 + "=";
+            document.getElementById("demo").innerHTML += myObj.cars[x1]+"<br>";
+        }
+       
+
+        
+        document.getElementById("demo").innerHTML += "<br>" + "<h1>After modify car name..<h2>";
+        //after modify car name printing
+       myObj.cars.car2 = "Mercedes";
+       for (x1 in myObj.cars) {
+
+            document.getElementById("demo").innerHTML += x1 + "=";
+            document.getElementById("demo").innerHTML += myObj.cars[x1] + "<br>";
+        }
+       document.getElementById("demo").innerHTML += "<br>"+"<h1>After delete car name..<h2>";
+
+
+
+      
+        //after delete one car name printing
+        delete myObj.cars.car2;
+
+        for (x1 in myObj.cars) {
+            document.getElementById("demo").innerHTML += x1 + "=";
+            document.getElementById("demo").innerHTML += myObj.cars[x1] + "<br>";
+        }
+
+    </script>
+
+</body>
+</html>

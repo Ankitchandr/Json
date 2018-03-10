@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color:lightgreen;
+        padding: 20px;
+    }
+    h1 {
+        text-decoration-color:orangered;
+        text-align:center;
+    }
+     h2 {
+         
+           text-align:center;
+       }
+   body {
+       background-color:palegoldenrod;
+   
+}
+
+</style>
+
+
+<script>
+
+       var myObj, i, x = "", x1 = "";
+    myObj = {
+        "name": "Ankit chnadra",
+        "eno": 125817865,
+      };
+    function validateForm() {
+        var x = document.forms["myForm"]["en"].value;
+        var x1 = document.forms["myForm"]["firstname"].value;
+       // var e = document.getElementById("course");
+        
+        if (x == "125817865" && x1 == "Ankit chandra" ) {
+            document.write("Result yet not to be decleare..");
+
+        }
+
+        else {
+
+
+            if (x1 != "Ankit chandra") {
+                alert("Enter correct name..");
+                return false;
+            }
+            else if (x != "125817865") {
+                alert("Enter correct Enrollement no..");
+                return false;
+
+            }
+            else
+            {
+                alert("Enter correct  name and enrollement no..");
+                return false;
+            }
+           
+          }
+        }
+       
+        
+    
+</script>
+
+<body>
+
+    <h1>Indra Gandhi National Open UniverSity</h1>
+    <h2>Regestration Details</h2>
+
+    <div>
+
+        <form name="myForm" action="/action_page.php"
+              onsubmit="return validateForm()" method="post">
+
+            <label for="fname">Candidate Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Enrollement no.</label>
+            <input type="text" id="En" name="en" placeholder=" Your enrollement no..">
+
+            <label for="course">Select Course</label>
+            <select id="course" name="course">
+                <option value="mca">MCA</option>
+                <option value="bca">BCA</option>
+                <option value="btech">B-TECH</option>
+                <option value="be">BE</option>
+                <option value="other">OTHER</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
